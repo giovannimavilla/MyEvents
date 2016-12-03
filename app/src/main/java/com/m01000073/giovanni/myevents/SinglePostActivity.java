@@ -142,13 +142,11 @@ public class SinglePostActivity extends AppCompatActivity {
                                 btnSegui.setTypeface(myCustomFont);
                                 btnSegui.setVisibility(View.VISIBLE);
                                 btnSegui.setText(" Aggiunto a preferiti ");
-                                Log.d("dentroooo has Child", "true if onDataChange");
                             }else{
                                // btnSegui = (Button)findViewById(R.id.btnSegui);
                                 btnSegui.setTypeface(myCustomFont);
                                 btnSegui.setVisibility(View.VISIBLE);
                                 btnSegui.setEnabled(true);
-                                Log.d("dentroooo has Child", "else onDataChange");
                             }
                         }
 
@@ -171,7 +169,6 @@ public class SinglePostActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         imgUser = dataSnapshot.child("image").getValue().toString();
-                        Log.d("dentro ondatachange", "userimage: "+imgUser);
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
