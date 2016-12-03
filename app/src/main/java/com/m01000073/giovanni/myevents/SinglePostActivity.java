@@ -91,7 +91,7 @@ public class SinglePostActivity extends AppCompatActivity {
         checkNotifica = intent.getIntExtra("checkNotifica", 0);
 
 
-
+        btnSegui = (Button)findViewById(R.id.btnSegui);
 
     }
 
@@ -138,13 +138,13 @@ public class SinglePostActivity extends AppCompatActivity {
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
                             if(dataSnapshot.hasChild(postUserID)){
-                                btnSegui = (Button)findViewById(R.id.btnSegui);
+                                //btnSegui = (Button)findViewById(R.id.btnSegui);
                                 btnSegui.setTypeface(myCustomFont);
                                 btnSegui.setVisibility(View.VISIBLE);
-                                btnSegui.setEnabled(false);
+                                btnSegui.setText(" Aggiunto a preferiti ");
                                 Log.d("dentroooo has Child", "true if onDataChange");
                             }else{
-                                btnSegui = (Button)findViewById(R.id.btnSegui);
+                               // btnSegui = (Button)findViewById(R.id.btnSegui);
                                 btnSegui.setTypeface(myCustomFont);
                                 btnSegui.setVisibility(View.VISIBLE);
                                 btnSegui.setEnabled(true);
@@ -205,7 +205,7 @@ public class SinglePostActivity extends AppCompatActivity {
             }
         });
 
-        btnSegui = (Button)findViewById(R.id.btnSegui);
+
 
         btnSegui.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -226,6 +226,7 @@ public class SinglePostActivity extends AppCompatActivity {
                 postUser.child("image").setValue(imgCurrentUser);
 
                 btnSegui.setEnabled(false);
+                btnSegui.setText(" Aggiunto a preferiti ");
             }
         });
 
