@@ -35,21 +35,23 @@ public class ForegroundService extends Service {
         mAuth = FirebaseAuth.getInstance();
 
         //Adding a childevent listener to firebase
-        message = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid()).child("notification");
-        message.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                notification = Long.parseLong(dataSnapshot.child("new message").getValue().toString());
-                if (notification != 0) {
-                    showNotification();
+        if (mAuth.getCurrentUser()!=null){
+            message = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid()).child("notification");
+            message.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    notification = Long.parseLong(dataSnapshot.child("new message").getValue().toString());
+                    if (notification != 0) {
+                        showNotification();
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("The read failed: ", "cuaiii");
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.e("The read failed: ", "cuaiii");
+                }
+            });
+        }
 
         return START_STICKY;
     }

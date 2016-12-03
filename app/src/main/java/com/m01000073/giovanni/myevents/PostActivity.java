@@ -369,7 +369,7 @@ public class PostActivity extends AppCompatActivity {
         final String tag_val = mPostTag.getText().toString().trim();
         final String date_val = mPostDate.getText().toString().trim();
         final String time_val = mPostTime.getText().toString().trim();
-        final String marker_val = btnMapsActivity.getText().toString().trim();
+        final String marker_val = textViewMarker.getText().toString().trim();
         final String desc_val = mPostDesc.getText().toString().trim();
 
 
