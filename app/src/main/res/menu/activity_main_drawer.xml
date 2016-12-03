@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_newPost"
+            android:icon="@drawable/ic_add"
+            android:title="Nuovo Post"/>
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search"
+            android:title="Ricerca" />
+        <item
+            android:id="@+id/nav_preferiti"
+            android:icon="@drawable/ic_preferiti"
+            android:title="Preferiti" />
+        <item
+            android:id="@+id/nav_followers"
+            android:icon="@drawable/ic_followers"
+            android:title="Followers" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notification"
+            android:title="Notifiche" />
+    </group>
+
+    <item android:title="Impostazioni">
+        <menu>
+            <item
+                android:id="@+id/nav_account"
+                android:icon="@drawable/ic_account"
+                android:title="Account" />
+
+        </menu>
+    </item>
+
+</menu>

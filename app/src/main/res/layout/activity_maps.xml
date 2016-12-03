@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:entries="@array/cityarray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/lll1"
+        android:weightSum="5">
+
+        <EditText
+            android:id="@+id/etLocationEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci via"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lll"
+        android:background="@drawable/mybutton"
+        android:text="Cerca"
+        android:textColor="#ffffff"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/btnSearch"
+        android:text="SALVA"
+        android:textColor="#ffffff"
+        android:background="@drawable/mybutton"/>
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/lll"
+    tools:context="com.m01000073.giovanni.myevents.MapsActivity" />
+
+</RelativeLayout>
